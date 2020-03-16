@@ -4,19 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, options) => {
   if (options.mode === 'production') {
-    config.plugins = [new CleanWebpackPlugin()];
+    config.plugins = [...config.plugins, new CleanWebpackPlugin()];
   }
   return config;
 };
 
 const config = {
   entry: './src/js/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/',
-    filename: 'bundle.js',
-    libraryTarget: 'umd',
-  },
   module: {
     rules: [
       {
@@ -49,4 +43,10 @@ const config = {
       template: './index.html',
     }),
   ],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: './',
+    filename: 'bundle.js',
+    libraryTarget: 'umd',
+  },
 };
