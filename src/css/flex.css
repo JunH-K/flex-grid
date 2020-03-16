@@ -69,3 +69,48 @@
     align-content: space-around;
 }
 
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+.flex-basis-0{
+    flex-basis: 0;
+}
+
+.flex-1{
+    flex:1;
+}
+
+/*
+.item:nth-child(2){
+    flex:1; 나머지는 고정이고 2만 늘어남
+}
+*/
+
+/*각아이템들 정렬*/
+.align-self-flex-start{
+    align-self: flex-start;
+}
+
+.align-self-center{
+    align-self: center;
+}
+
+.align-self-flex-end{
+    align-self: flex-end;
+}
+
+/*출력 순서변경*/
+.order-1{
+    order:1
+}
+
+.order-2{
+    order:2
+}
+
+.order-3{
+    order:3
+}
+
+
