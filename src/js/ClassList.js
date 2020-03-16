@@ -1,26 +1,22 @@
 class ClassList {
-  constructor(target) {
-    this._element = target;
-  }
-
-  toggle = name => {
-    if (this._contains(name)) {
-      this._remove(name);
+  toggle = (target, name) => {
+    if (this.contains(target, name)) {
+      this.removeClass(target, name);
     } else {
-      this._add(name);
+      this.addClass(target, name);
     }
   };
 
-  _contains = className => {
-    return this._element.classList.contains(className);
+  addClass = (target, className) => {
+    target.classList.add(className);
   };
 
-  _add = className => {
-    this._element.classList.add(className);
+  removeClass = (target, className) => {
+    target.classList.remove(className);
   };
 
-  _remove = className => {
-    this._element.classList.remove(className);
+  contains = (target, className) => {
+    return target.classList.contains(className);
   };
 }
 

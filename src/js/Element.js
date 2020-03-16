@@ -1,19 +1,19 @@
 import ClassList from './ClassList';
 
-class Flex {
+class Element {
   constructor(target) {
     this.container = target;
-    this.classList = new ClassList(this.container);
+    this.classList = new ClassList();
   }
 
-  apply = e => {
+  toggleClass = e => {
     const {
       target: {
         dataset: { name },
       },
     } = e;
-    this.classList.toggle(name);
+    this.classList.toggle(this.container, name);
   };
 }
 
-export default Flex;
+export default Element;
