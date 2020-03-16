@@ -2,7 +2,7 @@ import ClassList from './ClassList';
 
 class Element {
   constructor(target) {
-    this.container = target;
+    this.element = target;
     this.classList = new ClassList();
   }
 
@@ -12,7 +12,14 @@ class Element {
         dataset: { name },
       },
     } = e;
-    this.classList.toggle(this.container, name);
+
+    if (typeof this.element.forEach == 'function') {
+      return this.element.forEach(item => {
+        this.classList.toggle(item, name);
+      });
+    }
+
+    return this.classList.toggle(this.element, name);
   };
 }
 

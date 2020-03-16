@@ -1,8 +1,8 @@
 import ClassList from './ClassList';
 
 class ButtonContainer {
-  constructor() {
-    this.buttons = document.querySelector('.buttons');
+  constructor(buttons) {
+    this.buttons = buttons;
     this.classList = new ClassList();
   }
 
