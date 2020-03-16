@@ -7,12 +7,7 @@ class Flex {
   }
 
   apply = e => {
-    const {
-      target: {
-        dataset: { name },
-      },
-    } = e;
-    this.classList.toggle(name);
+    console.log('그리드');
   };
 }
 
